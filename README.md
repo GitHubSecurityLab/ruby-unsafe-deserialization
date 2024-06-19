@@ -14,15 +14,15 @@ This repo contains detection and RCE PoCs for following deserialization librarie
 * Psych (YAML)
 * Marshall
 
-The Oj, Ox and Psych proof of concepts were observed to work up to the current Ruby (3.3.3). The PoC for Marshall was observed to work up to Ruby 3.2.4 (released in April 2024).
+The Oj, Ox and Psych proof of concepts were observed to work up to the current Ruby 3.3.3 (released in June 2024). The PoC for Marshall was observed to work up to Ruby 3.2.4 (released in April 2024).
 
 
 ## Usage
 
-The subfolders for Oj, Ox and Psych (yaml) contain gadget chains for the detection of an exploitable sink and remote code execution.
+The subfolders for Oj, Ox and YAML contain gadget chains for the detection of an exploitable sink and remote code execution.
 
 * The **detection gadget chain** calls an URL when flowing into a vulnerable sink. For this to work the placeholder `{CALLBACK_URL}` has to be replaced with an URL which should be called (preferably under the control of the tester).
-* The **remote code execution (RCE) gadget chain** makes use of the `zip` command line util as a [GTFObin](https://gtfobins.github.io/gtfobins/zip/). Replace the placeholder `{ZIP_PARAM}` with a zip parameter that executes a command such as `-TmTT=\"$(id>/tmp/deser-poc)\"any.zip` (which will write the output of `id` to `/tmp/deser-poc`).
+* The **remote code execution (RCE) gadget chain** makes use of the `zip` command line util to run arbitrary commands (see [GTFObins](https://gtfobins.github.io/gtfobins/zip/)). Replace the placeholder `{ZIP_PARAM}` with a zip parameter that executes a command such as `-TmTT=\"$(id>/tmp/deser-poc)\"any.zip` (which will write the output of `id` to `/tmp/deser-poc`).
 
 
 See the Ruby files in the respective subfolders for more information.
