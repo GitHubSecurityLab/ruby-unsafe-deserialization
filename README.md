@@ -1,6 +1,8 @@
 # Proof of Concepts for unsafe deserialization in Ruby
 
-Companion repository to blog post (link).
+Companion repository to the blog post: [Execute commands by sending JSON? Learn how unsafe deserialization vulnerabilities work in Ruby projects](https://github.blog/2024-06-20-execute-commands-by-sending-json-learn-how-unsafe-deserialization-vulnerabilities-work-in-ruby-projects/).
+
+The proof of concept exploits contained in this repository are largely based on the [universal gadget chain](https://devcraft.io/2022/04/04/universal-deserialisation-gadget-for-ruby-2-x-3-x.html) published by [William Bowling](https://github.com/wbowling) (aka vakzz).
 
 ## Disclaimer
 
