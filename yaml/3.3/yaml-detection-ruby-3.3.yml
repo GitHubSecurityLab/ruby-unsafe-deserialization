@@ -11,7 +11,7 @@
                   uri: !ruby/object:URI::HTTP
                     path: "/"
                     scheme: s3
-                    host: {CALLBACK_URL}?
+                    host: {CALLBACK_DOMAIN}?
                     port: "any"
                     user: any
                     password: any

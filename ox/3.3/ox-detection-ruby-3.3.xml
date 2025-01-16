@@ -14,7 +14,7 @@
                     <o a="@uri" c="URI::HTTP">
                         <s a="@path">/</s>
                         <s a="@scheme">s3</s>
-                        <s a="@host">{CALLBACK_URL}?</s>
+                        <s a="@host">{CALLBACK_DOMAIN}?</s>
                         <s a="@port">any</s>
                         <s a="@user">any</s>
                         <s a="@password">any</s>

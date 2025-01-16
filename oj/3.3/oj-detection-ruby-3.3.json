@@ -13,7 +13,7 @@
                         "^o": "Gem::Source",
                         "uri": {
                           "^o": "URI::HTTP",
-                          "host": "{CALLBACK_URL}?",
+                          "host": "{CALLBACK_DOMAIN}?",
                           "port": "any",
                           "scheme": "s3", "path": "/", "user": "any", "password": "any"
                         }}}]},

@@ -23,8 +23,9 @@ The Oj, Ox and Psych proof of concepts were observed to work up to the current R
 
 The subfolders for Oj, Ox and YAML contain gadget chains for the detection of an exploitable sink and remote code execution.
 
-* The **detection gadget chain** calls an URL when flowing into a vulnerable sink. For this to work the placeholder `{CALLBACK_URL}` has to be replaced with an URL which should be called (preferably under the control of the tester).
-* The **remote code execution (RCE) gadget chain** makes use of the `zip` command line util to run arbitrary commands (see [GTFObins](https://gtfobins.github.io/gtfobins/zip/)). Replace the placeholder `{ZIP_PARAM}` with a zip parameter that executes a command such as `-TmTT=\"$(id>/tmp/deser-poc)\"any.zip` (which will write the output of `id` to `/tmp/deser-poc`).
-
+* The **detection gadget chain** calls an URL when flowing into a vulnerable sink. For this to work the placeholder `{CALLBACK_DOMAIN}` has to be replaced with a domain which should be called (preferably under the control of the tester).
+* The **remote code execution (RCE) gadget chain**:
+    * makes use of the `zip` command line util to run arbitrary commands (see [GTFObins](https://gtfobins.github.io/gtfobins/zip/)). Replace the placeholder `{ZIP_PARAM}` with a zip parameter that executes a command such as `-TmTT=\"$(id>/tmp/deser-poc)\"any.zip` (which will write the output of `id` to `/tmp/deser-poc`).
+    * for chain <= 3.0.2, replace the placeholder `{COMMAND}` with a system command like `id`.
 
 See the Ruby files in the respective subfolders for more information.
